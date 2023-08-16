@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const AddContact = () => {
+	const [fullName, setfullName]= useState("")
+	const [email, setEmail]= useState("")
+	const [addres, setAddres]= useState("")
+	const [phone, setPhone]= useState("")
 	return (
 		<div className="container">
 			<div>
