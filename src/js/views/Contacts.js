@@ -11,11 +11,10 @@ export const Contacts = () => {
 		id: undefined
 	});
 	const { store, actions } = useContext(Context); //para traer el store y actions desde el flux
-	console.log(store);
 
 	useEffect(() => {
 		actions.obtenerInfo();
-	}, [store.contacts]);
+	}, []);
 
 	return (
 		<div className="container">
