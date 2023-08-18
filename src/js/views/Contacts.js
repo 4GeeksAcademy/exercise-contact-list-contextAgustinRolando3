@@ -4,11 +4,15 @@ import { Context } from "../store/appContext.js"; //para traer el store y action
 
 import { ContactCard } from "../component/ContactCard.js";
 import { Modal } from "../component/Modal";
+import { ModalEditar } from "../component/ModalEditar.js";
 
 export const Contacts = () => {
 	const [state, setState] = useState({
 		showModal: false,
 		id: undefined
+	});
+	const [mostrarModal, setmostrarModal] = useState({
+		showModal: false
 	});
 	const { store, actions } = useContext(Context); //para traer el store y actions desde el flux
 
@@ -34,12 +38,14 @@ export const Contacts = () => {
 								address={item.address}
 								key={item.id}
 								onDelete={() => setState({ showModal: true, id: item.id })}
+								onEdit={() => setmostrarModal({ showModal: true })}
 							/>
 						))}
 					</ul>
 				</div>
 			</div>
 			<Modal id={state.id} show={state.showModal} onClose={() => setState({ showModal: false })} />
+			{/* <ModalEditar show={mostrarModal.showModal} onClose={() => setmostrarModal({ showModal: false })} /> */}
 		</div>
 	);
 };

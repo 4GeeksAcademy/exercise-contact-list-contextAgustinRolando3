@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
+import { ModalEditar } from "./ModalEditar";
 
 export const ContactCard = props => {
 	const { store, actions } = useContext(Context);
